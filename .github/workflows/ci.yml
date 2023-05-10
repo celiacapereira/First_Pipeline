@@ -23,9 +23,7 @@ jobs:
           python-version: '3.7'
       
       - name: Install connector 
-        uses: actions/snowflake/connector/connection.py
-        # with:
-        #     python-version: '3.x' 
+        run: pip install snowflake-connector-python
           
       - name: Run Python Script
         run: python create_file.py
