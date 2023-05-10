@@ -26,8 +26,13 @@ jobs:
         run: pip install snowflake-connector-python
 
       - name: Install pandas 
-        run: pip install snowflake-connector-pandas        
-        
+        run: pip install pandas 
+
+      - name: Install pandas 
+        run: pip install snowflake-connector-python[pandas]
+
+
+
       - name: Run Python Script
         run: python create_file.py
 
