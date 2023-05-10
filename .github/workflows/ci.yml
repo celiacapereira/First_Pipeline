@@ -20,8 +20,13 @@ jobs:
       - name: Install Python 
         uses: actions/setup-python@v2
         with:
-          python-version: '3.8'
+          python-version: '3.7'
       
+      - name: Install connector 
+        uses: actions/snowflakedb/snowflake-connector-python@v3
+        with:
+            python-version: '3.8' 
+          
       - name: Run Python Script
         run: python create_file.py
 
