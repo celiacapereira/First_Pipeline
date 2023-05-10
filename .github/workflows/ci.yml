@@ -34,10 +34,11 @@ jobs:
       # - name: Run Python Script
       #   run: python create_file.py
       - name: Run Python Script
-        run: python V1.1.1__connection_python.py
         env:
           SF_ACCOUNT: ${{ env.SF_ACCOUNT}} 
           SF_USERNAME: ${{ env.SF_USERNAME}} 
           SNOWFLAKE_PASSWORD: ${{ env.SNOWFLAKE_PASSWORD }} 
+        run: python V1.1.1__connection_python.py
+  
 
 
