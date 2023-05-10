@@ -6,8 +6,6 @@ from snowflake.connector.pandas_tools import write_pandas
 
 print('estou a ler')
 
-print(os.environ["SF_ACCOUNT"])
-
 conn = snowflake.connector.connect(
     user=os.environ["SF_USERNAME"],
     password=os.environ["SF_PASSWORD"]
