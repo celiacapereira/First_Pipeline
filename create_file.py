@@ -12,7 +12,7 @@ conn = snowflake.connector.connect(
     # account = 'px51283.eu-west-3.aws'
     account=os.environ["SF_ACCOUNT"],
     database = 'AIRBNB',
-    schema = 'PUBLIC'    
+    schema = 'RAW'    
     )
 
 cursor = conn.cursor()
