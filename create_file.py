@@ -10,7 +10,7 @@ conn = snowflake.connector.connect(
     user=os.environ["SF_USERNAME"],
     password=os.environ["SF_PASSWORD"],
     # account = 'px51283.eu-west-3.aws'
-    account=os.environ["SF_ACCOUNT"]
+    account=os.environ["SF_ACCOUNT"],
     database = 'AIRBNB',
     schema = 'PUBLIC'    
     )
