@@ -11,8 +11,8 @@ conn = snowflake.connector.connect(
     password=os.environ["SF_PASSWORD"],
     # account = 'px51283.eu-west-3.aws'
     account=os.environ["SF_ACCOUNT"],
-    database = 'DEV',
-    schema = 'RAW'    
+    database = 'DEV'#,
+#    schema = 'RAW'    
     )
 
 cursor = conn.cursor()
