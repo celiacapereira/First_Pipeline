@@ -8,7 +8,7 @@ print('estou a ler')
 conn = snowflake.connector.connect(
     user=os.environ["SF_USERNAME"],
     password=os.environ["SF_PASSWORD"],
-    account=os.environ["SF_ACCOUNT"]
+    account=os.environ["SNOWFLAKE_PASSWORD"]
     )
 
 cursor = conn.cursor()
