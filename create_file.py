@@ -10,9 +10,9 @@ print(os.environ["SF_ACCOUNT"])
 
 conn = snowflake.connector.connect(
     user=os.environ["SF_USERNAME"],
-    password=os.environ["SF_PASSWORD"],
-    account = 'px51283.eu-west-3.aws'
-    #account=os.environ["SF_ACCOUNT"]
+    password=os.environ["SF_PASSWORD"]
+    # account = 'px51283.eu-west-3.aws'
+    # #account=os.environ["SF_ACCOUNT"]
     )
 
 cursor = conn.cursor()
