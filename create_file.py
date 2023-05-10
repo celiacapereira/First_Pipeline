@@ -7,8 +7,8 @@ from snowflake.connector.pandas_tools import write_pandas
 print('estou a ler')
 conn = snowflake.connector.connect(
     user=os.environ["SF_USERNAME"],
-    password=os.environ["SF_PASSWORD"],
-    account=os.environ["SNOWFLAKE_PASSWORD"]
+    password=os.environ["SNOWFLAKE_PASSWORD"],
+    account=os.environ["SF_ACCOUNT"]
     )
 
 cursor = conn.cursor()
