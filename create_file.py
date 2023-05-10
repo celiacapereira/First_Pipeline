@@ -11,7 +11,7 @@ print(os.environ["SF_ACCOUNT"])
 conn = snowflake.connector.connect(
     user=os.environ["SF_USERNAME"],
     password=os.environ["SF_PASSWORD"],
-    account = 'uq40582.ca-central-1.aws'
+    account = 'px51283.eu-west-3.aws'
     #account=os.environ["SF_ACCOUNT"]
     )
 
