@@ -41,6 +41,7 @@ jobs:
           SF_ACCOUNT: $(SF_ACCOUNT)
           SF_USERNAME: $(SF_USERNAME)
           SF_PASSWORD: $(SF_PASSWORD)
+          echo: $(SF_ACCOUNT)
         run: python create_file.py
   
 
