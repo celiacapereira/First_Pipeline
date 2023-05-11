@@ -65,6 +65,18 @@ connection.cursor().execute("USE WAREHOUSE COMPUTE_WH;")
 
 connection.cursor().execute("CREATE OR REPLACE SCHEMA DEV.REPORT; ")
 
+connection.cursor().execute(""" CREATE TABLE DEV.REPORT.TITANIC_REPORT (
+    PASSENGERID INT,
+    SURVIVED INT, 
+    PCLASS INT, 
+    SEX VARCHAR(6), 
+    AGE INT, 
+    SIBSP INT, 
+    PARCH INT, 
+    AGERANGE VARCHAR(5)
+    )""")
+
+
 success, num_chunks, num_rows, output = write_pandas(
             conn=connection,
             df=df_drop,
