@@ -36,16 +36,16 @@ jobs:
           SF_ACCOUNT: ${{SECRETS.SF_ACCOUNT}}
           SF_PASSWORD: ${{secrets.SF_PASSWORD}}
           SF_USERNAME: ${{secrets.SF_USERNAME}}
-        run: python connection.py        
+        run: python test/connection.py        
 
       - name: Run null tests  
-        run: python is_null.py
+        run: python test/is_null.py
 
       - name: Run row tests
-        run: python row_number.py
+        run: python test/row_number.py
 
       - name: run col tests
-        run: python col_number.py
+        run: python test/col_number.py
     
 
 
