@@ -22,19 +22,23 @@ jobs:
         with:
           python-version: '3.7'
       
-      - name: Install connector 
-        run: pip install snowflake-connector-python --upgrade
+      # - name: Install connector 
+      #   run: pip install snowflake-connector-python --upgrade
 
-      - name: Install pandas 
-        run: pip install pandas --upgrade
+      # - name: Install pandas 
+      #   run: pip install pandas --upgrade
 
-      - name: Install pandas snowflake
-        run: pip install snowflake-connector-python[pandas] --upgrade
+      # - name: Install pandas snowflake
+      #   run: pip install snowflake-connector-python[pandas] --upgrade
 
       # - name: Install dotenv
       #   run: pip install python-dotenv
 
-      - name: Run Python Script
+      - name: Run testes  
+        env:
+          SF_ACCOUNT: ${{SECRETS.SF_ACCOUNT}}
+          SF_PASSWORD: ${{secrets.SF_PASSWORD}}
+          SF_USERNAME: ${{secrets.SF_USERNAME}}
         run: python connection.py          
 
 
