@@ -41,7 +41,7 @@ jobs:
           SF_USERNAME: ${{secrets.SF_USERNAME}}
         run: python connection.py        
 
-      - name: Run schemachange
-        run: schemachange -f $(PROJECT_FOLDER)/ -a $(SF_ACCOUNT) -u $(SF_USERNAME) -r ACCOUNTADMIN -w COMPUTE_WH -d DEV -c DEV.SCHEMACHANGE.CHANGE_HISTORY --create-change-history-table
+      # - name: Run schemachange
+      #   run: schemachange -f $(PROJECT_FOLDER)/ -a $(SF_ACCOUNT) -u $(SF_USERNAME) -r ACCOUNTADMIN -w COMPUTE_WH -d DEV -c DEV.SCHEMACHANGE.CHANGE_HISTORY --create-change-history-table
 
         
