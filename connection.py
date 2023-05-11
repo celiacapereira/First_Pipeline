@@ -66,7 +66,7 @@ connection.cursor().execute("USE WAREHOUSE COMPUTE_WH;")
 connection.cursor().execute("CREATE OR REPLACE SCHEMA DEV.REPORT; ")
 
 success, num_chunks, num_rows, output = write_pandas(
-            conn=conn,
+            conn=connection,
             df=df_drop,
             table_name='TITANIC_REPORT',
             database='DEV',
