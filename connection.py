@@ -85,3 +85,4 @@ success, num_chunks, num_rows, output = write_pandas(
             schema='REPORT'
         )
 cursor.close()
+
