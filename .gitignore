@@ -1,4 +1,22 @@
+.env
+.venv
+env/
+venv/
+ENV/
+VENV/
 
-SF_ACCOUNT    = 'uq40582.ca-central-1.aws'
-SF_USER       = 'celia'
-SF_PASSWORD   = 'Celia.1998'
+.Python
+[Bb]in
+[Ii]nclude
+[Ll]ib
+[Ll]ib64
+[Ll]ocal
+[Ss]cripts
+pyvenv.cfg
+pip-selfcheck.json
+
+# Ignore Mac DS_Store files
+.DS_Store
+
+# Ignore vscode files
+.vscode
