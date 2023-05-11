@@ -1,0 +1,44 @@
+
+name: CI
+
+on:
+  push:
+    branches: [ "test_ci" ]
+
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Install Python 
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.7'
+      
+      - name: Install connector 
+        run: pip install snowflake-connector-python --upgrade
+
+      - name: Install pandas 
+        run: pip install pandas --upgrade
+
+      - name: Install pandas snowflake
+        run: pip install snowflake-connector-python[pandas] --upgrade
+            
+      # - name: Install scheamachange
+      #   run: pip install schemachange --upgrade
+
+      - name: Run testes  
+        env:
+          SF_ACCOUNT: ${{SECRETS.SF_ACCOUNT}}
+          SF_PASSWORD: ${{secrets.SF_PASSWORD}}
+          SF_USERNAME: ${{secrets.SF_USERNAME}}
+        run: python connection.py        
+
+      # - name: Run schemachange
+      #   run: schemachange -f $(PROJECT_FOLDER)/ -a $(SF_ACCOUNT) -u $(SF_USERNAME) -r ACCOUNTADMIN -w COMPUTE_WH -d DEV -c DEV.SCHEMACHANGE.CHANGE_HISTORY --create-change-history-table
+
+        
