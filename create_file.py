@@ -7,11 +7,11 @@ from snowflake.connector.pandas_tools import write_pandas
 print('estou a ler')
 
 conn = snowflake.connector.connect(
-    user=os.environ["SF_USERNAME"],
-    password=os.environ["SF_PASSWORD"],
+    user=os.environ['SF_USERNAME'],
+    password=os.environ['SF_PASSWORD'],
     # account = 'px51283.eu-west-3.aws'
-    account=os.environ["SF_ACCOUNT"],
-    database = 'DEV'
+    account=os.environ['SF_ACCOUNT'],
+    # database = 'DEV'
     #,
 #    schema = 'RAW'    
     )
