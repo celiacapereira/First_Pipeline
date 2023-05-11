@@ -1,0 +1,58 @@
+
+name: Testing workflow
+
+on:
+  push:
+    branches: [ "test_ci" ]
+
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      
+      - name: List all files
+        run: ls
+
+      - name: Install Python 
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.7'
+      
+      - name: Install connector 
+        run: pip install snowflake-connector-python --upgrade
+
+      - name: Install pandas 
+        run: pip install pandas --upgrade
+
+      - name: Install pandas snowflake
+        run: pip install snowflake-connector-python[pandas] --upgrade
+            
+      - name: Run dataframe  
+        env:
+          SF_ACCOUNT: ${{SECRETS.SF_ACCOUNT}}
+          SF_PASSWORD: ${{secrets.SF_PASSWORD}}
+          SF_USERNAME: ${{secrets.SF_USERNAME}}
+        run: python connection.py        
+
+      - name: Run null tests  
+        run: python is_null.py
+
+      - name: Run row tests
+        run: python row_number.py
+
+      - name: run col tests
+        run: python col_number.py
+    
+
+
+      # - name: Run schemachange
+      #   run: |
+      #   echo "Step 2: Running schemachange"
+      #   schemachange -f $GITHUB_WORKSPACE/ -a $SF_ACCOUNT -u $SF_USERNAME -r "ACCOUNTADMIN" -w $SF_WAREHOUSE -d $SF_DATABASE -c $SF_DATABASE.SCHEMACHANGE.CHANGE_HISTORY --create-change-history-table
+
+
+        
