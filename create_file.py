@@ -3,14 +3,25 @@ import os
 from snowflake.connector import *
 import pandas as pd
 from snowflake.connector.pandas_tools import write_pandas
+from dotenv import load_dotenv
+
 
 print('estou a ler')
 
+# conn = snowflake.connector.connect(
+#     user=os.environ.get('SF_USERNAME'),
+#     password=os.environ.get('SF_PASSWORD'),
+#     # account = 'px51283.eu-west-3.aws'
+#     account=os.environ.get('SF_ACCOUNT')
+#     # database = 'DEV'
+#     #,
+# #    schema = 'RAW'    
+#     )
+
 conn = snowflake.connector.connect(
-    user=os.environ.get('SF_USERNAME'),
-    password=os.environ.get('SF_PASSWORD'),
-    # account = 'px51283.eu-west-3.aws'
-    account=os.environ.get('SF_ACCOUNT')
+    user=os.getenv('SF_USER'),
+    password=os.getenv('SF_PASSWORD'),
+    account=os.getenv('SF_ACCOUNT')
     # database = 'DEV'
     #,
 #    schema = 'RAW'    
