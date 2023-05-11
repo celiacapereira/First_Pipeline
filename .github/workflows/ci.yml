@@ -38,11 +38,10 @@ jobs:
       - name: Create env file
         run: |
           touch .env
-          echo  SF_ACCOUNT:  $(SF_ACCOUNT) >> .env
-          echo SF_USERNAME: $(SF_USERNAME) >> .env
-          echo SF_PASSWORD: $(SF_PASSWORD) >> .env
-          echo: SF_USERNAME
+          echo  SF_ACCOUNT:  ${{env.SF_ACCOUNT}} >> .env
+          echo SF_USERNAME:  ${{env.SF_USERNAME}}  >> .env
+          echo SF_PASSWORD:  ${{env.SF_PASSWORD}} >> .env
 
-  
+          
 
 
