@@ -16,6 +16,6 @@ conn = snowflake.connector.connect(
 #    schema = 'RAW'    
     )
 
-cursor = conn.cursor()
-cursor.execute("SELECT * FROM DEV.RAW.TITANIC_TRAIN_RAW;")
-print("connection is donne")
+# cursor = conn.cursor()
+# cursor.execute("SELECT * FROM DEV.RAW.TITANIC_TRAIN_RAW;")
+# print("connection is donne")
