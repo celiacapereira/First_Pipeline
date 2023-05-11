@@ -22,4 +22,5 @@ connection = snowflake.connector.connect (
 
 )
 
-print("Conectou")
+cursor = connection.cursor()
+cursor.execute("SELECT * FROM DEV.RAW.TITANIC_TRAIN_RAW")
