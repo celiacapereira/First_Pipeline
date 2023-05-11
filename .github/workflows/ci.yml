@@ -31,15 +31,11 @@ jobs:
       - name: Install pandas snowflake
         run: pip install snowflake-connector-python[pandas] --upgrade
             
-      - name: Install scheamachange
-        run: pip install schemachange --upgrade
-
       - name: Run testes  
         env:
           SF_ACCOUNT: ${{SECRETS.SF_ACCOUNT}}
           SF_PASSWORD: ${{secrets.SF_PASSWORD}}
           SF_USERNAME: ${{secrets.SF_USERNAME}}
-          GITHUB_WORKSPACE: $GITHUB_WORKSPACE
         run: python connection.py        
 
       # - name: Run schemachange
