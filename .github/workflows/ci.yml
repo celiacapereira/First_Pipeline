@@ -31,18 +31,10 @@ jobs:
       - name: Install pandas snowflake
         run: pip install snowflake-connector-python[pandas] --upgrade
 
-      - name: Install dotenv
-        run: pip install python-dotenv
-      # - name: Run Python Script
-      #   run: python create_file.py
-      - name: Create env file
-        run: |
-          touch .env
-          echo  SF_ACCOUNT:  ${{env.SF_ACCOUNT}} >> .env
-          echo SF_USERNAME:  ${{env.SF_USERNAME}}  >> .env
-          echo SF_PASSWORD:  ${{env.SF_PASSWORD}} >> .env
-      
+      # - name: Install dotenv
+      #   run: pip install python-dotenv
+
       - name: Run Python Script
-        run: python create_file.py          
+        run: python connection.py          
 
 
