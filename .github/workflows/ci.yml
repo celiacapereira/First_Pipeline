@@ -31,8 +31,8 @@ jobs:
       - name: Install pandas snowflake
         run: pip install snowflake-connector-python[pandas] --upgrade
             
-      # - name: Install scheamachange
-      #   run: pip install schemachange --upgrade
+      - name: Install scheamachange
+        run: pip install schemachange --upgrade
 
       - name: Run testes  
         env:
