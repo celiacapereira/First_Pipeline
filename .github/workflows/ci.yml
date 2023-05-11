@@ -31,6 +31,8 @@ jobs:
       - name: Install pandas snowflake
         run: pip install snowflake-connector-python[pandas] --upgrade
 
+      - name: Install dotenv
+        run: pip install dotenv
       # - name: Run Python Script
       #   run: python create_file.py
       - name: Run Python Script
