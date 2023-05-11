@@ -41,7 +41,8 @@ jobs:
           echo  SF_ACCOUNT:  ${{env.SF_ACCOUNT}} >> .env
           echo SF_USERNAME:  ${{env.SF_USERNAME}}  >> .env
           echo SF_PASSWORD:  ${{env.SF_PASSWORD}} >> .env
-
-          
+      
+      - name: Run Python Script
+        run: python create_file.py          
 
 
